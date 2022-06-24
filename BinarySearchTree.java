@@ -1,5 +1,7 @@
 package com.binarysearchtree;
 
+import java.lang.annotation.ElementType;
+
 public class BinarySearchTree<T extends Comparable<T>> {
     static Node root;
 
@@ -10,6 +12,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
         for (Integer i : elements) {
             binarySearchTree.add(i);
         }
+        System.out.println();
+        System.out.println("In the list :"+binarySearchTree.searchNode(63));
         System.out.println();
         System.out.println("Size of the elements is : " + binarySearchTree.size());
         System.out.println();
@@ -43,7 +47,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     public void inOrderPrint(Node<T> node) {
         if (node != null) {
             inOrderPrint(node.left);
-            System.out.print(node.key + " -->");
+            System.out.print(node.key + "-->");
             inOrderPrint(node.right);
 
         }
@@ -75,5 +79,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     public int size() {
         return findingSize(root);
+    }
+
+    public boolean findingNode(Node<T> root, T key) {
+        if (root == null) {
+            System.out.println("List is Empty");
+            return false;
+        } else if (key.compareTo(root.key) == 0) {
+            return true;
+        }
+        return true;
+
+    }
+
+
+    public boolean searchNode(T key) {
+        System.out.println("Element :"+key);
+        return findingNode(root, key);
     }
 }
