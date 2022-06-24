@@ -6,9 +6,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
     public static void main(String[] args) {
         System.out.println("Welcome to Binary Search Tree Program");
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-        binarySearchTree.add(56);
-        binarySearchTree.add(30);
-        binarySearchTree.add(70);
+        int[] elements = {56, 30, 70, 40, 22, 60, 95, 65, 63, 67, 11, 16, 3};
+        for (Integer i : elements) {
+            binarySearchTree.add(i);
+        }
+        System.out.println();
+        System.out.println("Size of the elements is : " + binarySearchTree.size());
         System.out.println();
         System.out.println("InOrder Print is left-->root-->right:");
         binarySearchTree.inOrderPrint(root);
@@ -60,5 +63,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
             preOrderPrint(node.right);
             System.out.print(node.key + "-->");
         }
+    }
+
+    public int findingSize(Node<T> root) {
+        if (root == null) {
+            return 0;
+        } else {
+            return findingSize(root.right) + 1 + findingSize(root.left);
+        }
+    }
+
+    public int size() {
+        return findingSize(root);
     }
 }
