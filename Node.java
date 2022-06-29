@@ -1,4 +1,4 @@
-package com.binarysearchtree;
+package com.bridzlab;
 
 public class Node<T extends Comparable<T>> {
     T key;
