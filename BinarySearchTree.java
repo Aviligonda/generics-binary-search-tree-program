@@ -1,4 +1,4 @@
-package com.binarysearchtree;
+package com.bridzlab;
 
 public class BinarySearchTree<T extends Comparable<T>> {
     static Node root;
