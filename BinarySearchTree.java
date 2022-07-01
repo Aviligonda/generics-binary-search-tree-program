@@ -17,12 +17,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
         System.out.println("InOrder Print is left-->root-->right:");
         binarySearchTree.inOrderPrint(root);
         System.out.println();
-        //        System.out.println("Size of the elements is : " + binarySearchTree.size());
-//        System.out.println("PreOrder Print is root-->left-->right:");
-//        binarySearchTree.preOrderPrint(root);
-//        System.out.println();
-//        System.out.println("PostOrder Print is left-->right-->root:");
-//        binarySearchTree.postOrderPrint(root);
+               System.out.println("Size of the elements is : " + binarySearchTree.size());
+       System.out.println("PreOrder Print is root-->left-->right:");
+       binarySearchTree.preOrderPrint(root);
+       System.out.println();
+       System.out.println("PostOrder Print is left-->right-->root:");
+       binarySearchTree.postOrderPrint(root);
 
     }
 
@@ -82,32 +82,32 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
 }
-//
-//    public void preOrderPrint(Node<T> node) {
-//        if (node != null) {
-//            System.out.print(node.key + "-->");
-//            preOrderPrint(node.left);
-//            preOrderPrint(node.right);
-//        }
-//    }
-//
-//    public void postOrderPrint(Node<T> node) {
-//        if (node != null) {
-//            preOrderPrint(node.left);
-//            preOrderPrint(node.right);
-//            System.out.print(node.key + "-->");
-//        }
-//    }
-//
-//    public int findingSize(Node<T> root) {
-//        if (root == null) {
-//            return 0;
-//        } else {
-//            return findingSize(root.right) + 1 + findingSize(root.left);
-//        }
-//    }
-//
-//    public int size() {
-//        return findingSize(root);
 
-//    }
+   public void preOrderPrint(Node<T> node) {
+        if (node != null) {
+            System.out.print(node.key + "-->");
+            preOrderPrint(node.left);
+            preOrderPrint(node.right);
+       }
+   }
+
+   public void postOrderPrint(Node<T> node) {
+       if (node != null) {
+           preOrderPrint(node.left);
+           preOrderPrint(node.right);
+           System.out.print(node.key + "-->");
+       }
+   }
+
+   public int findingSize(Node<T> root) {
+       if (root == null) {
+           return 0;
+       } else {
+           return findingSize(root.right) + 1 + findingSize(root.left);
+       }
+   }
+
+   public int size() {
+       return findingSize(root);
+
+   }
